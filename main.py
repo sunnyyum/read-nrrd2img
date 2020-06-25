@@ -5,18 +5,11 @@ import matplotlib.pyplot as plt
 
 
 def read_opt(args: list) -> argparse.Namespace:
-    """Read the arguments and store into variable
+    """
+    Read the arguments and store into variable
     Maps the input from command line with variables, based on flag in the command line input.
-
-    Parameters
-    ----------
-    args : list
-        contains all the arguments after python file itself
-
-    Returns
-    -------
-    argparse.Namespace
-         an object holding attribute of input directory path
+    :param args: list that contains the argument after python file itself
+    :return: an object holding attribute of input file path
     """
     parse = argparse.ArgumentParser(description="extract image from the given nrrd file")
 
