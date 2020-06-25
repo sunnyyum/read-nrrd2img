@@ -5,7 +5,7 @@ This is a Python program that decodes nrrd file and extract image information fr
 ### Prerequisites
 1. pynrrd
 2. SimpleITK
-### Running the test cases
+### Running the tests
 ```commandline
 python3 main.py -i input.nrrd
 ``` 
