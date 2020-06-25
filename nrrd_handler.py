@@ -6,7 +6,7 @@ import numpy as np
 class NrrdHandler:
     """This class decodes the nrrd file with different libraries
     """
-    
+
     def __init__(self, file_path: str):
         """
         Initialize with the file path
