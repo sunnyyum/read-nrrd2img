@@ -38,9 +38,12 @@ if __name__ == '__main__':
     if len(img_pynrrd.shape) == 3:
         ax[0].imshow(img_pynrrd[:, :, 0])
         ax[1].imshow(img_sitk[0])
-    else:
+    elif len(img_pynrrd.shape) == 2:
         ax[0].imshow(img_pynrrd)
         ax[1].imshow(img_sitk)
+    else:
+        ax[0].imshow(img_pynrrd[0, :, :, 0])
+        ax[1].imshow(img_sitk[0, :, :, 0])
 
     ax[0].set_title('pynrrd')
     ax[1].set_title('SimpleITK')
