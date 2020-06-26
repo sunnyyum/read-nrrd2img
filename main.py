@@ -35,13 +35,13 @@ if __name__ == '__main__':
     # plot two images
     fig, ax = plt.subplots(1, 2)
 
-    if len(img_pynrrd.shape) == 3:
-        ax[0].imshow(img_pynrrd[:, :, 0])
-        ax[1].imshow(img_sitk[0])
-    elif len(img_pynrrd.shape) == 2:
+    if len(img_pynrrd.shape) == 2:
         ax[0].imshow(img_pynrrd)
         ax[1].imshow(img_sitk)
-    else:
+    elif len(img_pynrrd.shape) == 3:
+        ax[0].imshow(img_pynrrd[:, :, 0])
+        ax[1].imshow(img_sitk[0])
+    elif len(img_pynrrd.shape) == 4:
         ax[0].imshow(img_pynrrd[0, :, :, 0])
         ax[1].imshow(img_sitk[0, :, :, 0])
 
