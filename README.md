@@ -1,5 +1,5 @@
 # Convert NRRD to Image
-This is a Python program that decodes nrrd file and extract image information from it.
+This is a Python program that decodes nrrd file and extract image information from it to display.
 
 ## Getting Started
 These instructions and prerequisites will help you with running on your local machine.
