@@ -2,6 +2,7 @@ import argparse
 import sys
 import nrrd_handler
 import matplotlib.pyplot as plt
+import numpy as np
 
 
 def read_opt(args: list) -> argparse.Namespace:
@@ -39,8 +40,16 @@ if __name__ == '__main__':
         ax[0].imshow(img_pynrrd)
         ax[1].imshow(img_sitk)
     elif len(img_pynrrd.shape) == 3:
-        ax[0].imshow(img_pynrrd[:, :, 0])
-        ax[1].imshow(img_sitk[0])
+        # if there is only three layer
+        # assume color image
+        if img_pynrrd.shape[0] == 3:
+            img_pynrrd_restacked = np.stack([img_pynrrd[ind, :, :] for ind in range(3)], axis=2)
+            ax[0].imshow(img_pynrrd_restacked)
+            ax[1].imshow(img_sitk)
+        else:
+            ax[0].imshow(img_pynrrd[:, :, 0])
+            ax[1].imshow(img_sitk[0])
+
     elif len(img_pynrrd.shape) == 4:
         ax[0].imshow(img_pynrrd[0, :, :, 0])
         ax[1].imshow(img_sitk[0, :, :, 0])
