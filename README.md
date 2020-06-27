@@ -2,7 +2,7 @@
 This is a Python program that decodes nrrd file and extract image information from it to display.
 
 ## Getting Started
-These instructions and prerequisites will help you with running on your local machine.
+These instructions and prerequisites will help you with running nrrd file on your local machine.
 ### Prerequisites
 1. pynrrd
 2. SimpleITK
